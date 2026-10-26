@@ -3,6 +3,8 @@ resource:
     shortName: Supplier
     description: Supplier management API for storefront operations
     provider: SprykerAcademy\Glue\Supplier\Api\Storefront\Provider\SuppliersStorefrontProvider
+    paginationEnabled: true
+    paginationItemsPerPage: 10
     operations:
         - type: Get
         - type: GetCollection
@@ -26,3 +28,21 @@ resource:
         phone:
             type: string
             description: Supplier phone
+        pagination:
+            type: object
+            objectName: Pagination
+            description: Paging data, set on the first item only
+            writable: false
+            properties:
+                numFound:
+                    type: integer
+                    description: All suppliers, in every page
+                currentPage:
+                    type: integer
+                    description: The page of this response
+                maxPage:
+                    type: integer
+                    description: The last page
+                currentItemsPerPage:
+                    type: integer
+                    description: Suppliers per page
