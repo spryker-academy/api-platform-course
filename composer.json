@@ -1,6 +1,6 @@
 {
-    "name": "spryker-academy/supplier",
-    "description": "Spryker Academy Supplier Training Module Suite - Master intermediate and advanced Spryker concepts",
+    "name": "spryker-academy/api-platform-course",
+    "description": "Spryker Academy - Building APIs in Spryker with API Platform: the Supplier module suite the video course starts from, and one branch per lesson with the API built step by step",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,16 +12,13 @@
     "keywords": [
         "spryker",
         "training",
+        "api-platform",
         "supplier",
-        "crud",
-        "data-import",
-        "elasticsearch",
-        "redis",
-        "api",
-        "oms"
+        "storefront-api",
+        "backend-api"
     ],
     "require": {
-        "php": ">=8.4",
+        "php": ">=8.3",
         "spryker/kernel": "^3.0.0",
         "spryker/symfony": "^3.0.0",
         "spryker/gui": "^3.0.0 || ^4.0.0",
@@ -34,7 +31,7 @@
         "spryker/publisher": "^1.0.0",
         "spryker/publisher-extension": "^1.0.0",
         "spryker/event-behavior": "^1.0.0",
-        "spryker/api-platform": "^0.5.0 || ^1.0.0",
+        "spryker/api-platform": "^1.25.0",
         "spryker/oms": "^11.0.0",
         "spryker/oms-extension": "^1.0.0"
     },
@@ -54,21 +51,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "10.0.x-dev",
-            "dev-ilt/202512.0/basics/supplier-table-schema/skeleton": "4.0-dev",
-            "dev-ilt/202512.0/basics/supplier-table-schema/complete": "4.0.x-dev",
-            "dev-ilt/202512.0/intermediate/back-office/skeleton": "6.0-dev",
-            "dev-ilt/202512.0/intermediate/back-office/complete": "6.0.x-dev",
-            "dev-ilt/202512.0/intermediate/data-import/skeleton": "7.0-dev",
-            "dev-ilt/202512.0/intermediate/data-import/complete": "7.0.x-dev",
-            "dev-ilt/202512.0/intermediate/publish-synchronize/skeleton": "8.0-dev",
-            "dev-ilt/202512.0/intermediate/publish-synchronize/complete": "8.0.x-dev",
-            "dev-ilt/202512.0/intermediate/search/skeleton": "9.0-dev",
-            "dev-ilt/202512.0/intermediate/search/complete": "9.0.x-dev",
-            "dev-ilt/202512.0/intermediate/glue-storefront/skeleton": "10.0-dev",
-            "dev-ilt/202512.0/intermediate/glue-storefront/complete": "10.0.x-dev",
-            "dev-ilt/202512.0/intermediate/oms/skeleton": "11.0-dev",
-            "dev-ilt/202512.0/intermediate/oms/complete": "11.0.x-dev"
+            "dev-main": "1.0.x-dev"
         }
     },
     "minimum-stability": "dev",
