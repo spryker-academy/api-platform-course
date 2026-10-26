@@ -15,6 +15,13 @@
 
     <transfer name="SupplierCollection">
         <property name="suppliers" type="Supplier[]" singular="supplier" />
+        <property name="pagination" type="Pagination" />
+    </transfer>
+
+    <transfer name="Pagination">
+        <property name="limit" type="int" />
+        <property name="offset" type="int" />
+        <property name="nbResults" type="int" />
     </transfer>
 
     <transfer name="SupplierCriteria">
