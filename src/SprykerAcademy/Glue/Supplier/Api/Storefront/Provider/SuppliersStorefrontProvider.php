@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 namespace SprykerAcademy\Glue\Supplier\Api\Storefront\Provider;
-use Generated\Api\Storefront\SuppliersStorefrontResource;
 use Spryker\ApiPlatform\State\Provider\AbstractStorefrontProvider;
 use SprykerAcademy\Client\SupplierSearch\SupplierSearchClientInterface;
+use SprykerAcademy\Glue\Supplier\Processor\Mapper\SupplierMapper;
 class SuppliersStorefrontProvider extends AbstractStorefrontProvider
 {
     public function __construct(
@@ -12,7 +12,7 @@ class SuppliersStorefrontProvider extends AbstractStorefrontProvider
     }
     protected function provideItem(): ?object
     {
-        $idSupplier = $this->getUriVariables()['idSupplier'] ?? null;
+        $idSupplier = $this->findUriVariable('idSupplier');
         if ($idSupplier === null) {
             return null;
         }
@@ -21,19 +21,18 @@ class SuppliersStorefrontProvider extends AbstractStorefrontProvider
         if ($supplierTransfer->getIdSupplier() === null) {
             return null;
         }
-        return SuppliersStorefrontResource::fromArray(
-            $supplierTransfer->toArray(false, true),
-        );
+        return (new SupplierMapper())
+            ->mapSupplierTransferToSuppliersStorefrontResource($supplierTransfer);
     }
     protected function provideCollection(): array
     {
         $collection = $this->supplierSearchClient
             ->searchSuppliers();
+        $supplierMapper = new SupplierMapper();
         $resources = [];
         foreach ($collection->getSuppliers() as $supplierTransfer) {
-            $resources[] = SuppliersStorefrontResource::fromArray(
-                $supplierTransfer->toArray(false, true),
-            );
+            $resources[] = $supplierMapper
+                ->mapSupplierTransferToSuppliersStorefrontResource($supplierTransfer);
         }
         return $resources;
     }
