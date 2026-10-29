@@ -8,6 +8,7 @@ use Spryker\Client\Kernel\AbstractDependencyProvider;
 use Spryker\Client\Kernel\Container;
 use Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface;
 use SprykerAcademy\Client\SupplierSearch\Plugin\Elasticsearch\Query\SupplierSearchQueryPlugin;
+use SprykerAcademy\Client\SupplierSearch\Plugin\Elasticsearch\QueryExpander\SupplierIdsQueryExpanderPlugin;
 use SprykerAcademy\Client\SupplierSearch\Plugin\Elasticsearch\QueryExpander\SupplierPaginationQueryExpanderPlugin;
 use SprykerAcademy\Client\SupplierSearch\Plugin\Elasticsearch\ResultFormatter\SupplierSearchResultFormatterPlugin;
 
@@ -82,6 +83,7 @@ class SupplierSearchDependencyProvider extends AbstractDependencyProvider
     {
         return [
             new SupplierPaginationQueryExpanderPlugin(),
+            new SupplierIdsQueryExpanderPlugin(),
         ];
     }
 }

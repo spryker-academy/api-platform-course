@@ -60,6 +60,7 @@ class SupplierSearchConfig extends AbstractBundleConfig
 
     public const string PARAMETER_OFFSET = 'offset';
     public const string PARAMETER_LIMIT = 'limit';
+    public const string PARAMETER_IDS_SUPPLIER = 'ids-supplier';
 
     /**
      * @api

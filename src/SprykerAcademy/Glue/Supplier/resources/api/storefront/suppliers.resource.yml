@@ -11,9 +11,7 @@ resource:
     includes:
         - relationshipName: supplier-locations
           targetResource: SupplierLocations
-          uriTemplate: /suppliers/{idSupplier}/supplier-locations
-          uriVariableMappings:
-              idSupplier: idSupplier
+          resolverClass: SprykerAcademy\Glue\Supplier\Api\Storefront\Relationship\SupplierLocationsRelationshipResolver
     properties:
         idSupplier:
             type: integer
