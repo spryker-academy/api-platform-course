@@ -1,0 +1,44 @@
+resource:
+    name: SupplierLocations
+    shortName: SupplierLocation
+    description: The locations of one supplier
+    provider: SprykerAcademy\Glue\Supplier\Api\Storefront\Provider\SupplierLocationsStorefrontProvider
+    paginationEnabled: false
+    operations:
+        - type: GetCollection
+          uriTemplate: /suppliers/{idSupplier}/supplier-locations
+          uriVariables:
+              idSupplier:
+                  fromClass: SuppliersStorefrontResource
+        - type: Get
+          uriTemplate: /suppliers/{idSupplier}/supplier-locations/{idSupplierLocation}
+          uriVariables:
+              idSupplier:
+                  fromClass: SupplierLocationsStorefrontResource
+                  identifiers: [idSupplier]
+              idSupplierLocation:
+                  fromClass: SupplierLocationsStorefrontResource
+                  identifiers: [idSupplierLocation]
+    properties:
+        idSupplierLocation:
+            type: integer
+            description: The unique location identifier
+            identifier: true
+        idSupplier:
+            type: integer
+            description: The supplier of the location
+        city:
+            type: string
+            description: City
+        country:
+            type: string
+            description: Country
+        address:
+            type: string
+            description: Street and number
+        zipCode:
+            type: string
+            description: Zip code
+        isDefault:
+            type: boolean
+            description: The default location of the supplier
