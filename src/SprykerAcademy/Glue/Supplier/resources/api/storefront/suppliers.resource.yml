@@ -8,6 +8,12 @@ resource:
     operations:
         - type: Get
         - type: GetCollection
+    includes:
+        - relationshipName: supplier-locations
+          targetResource: SupplierLocations
+          uriTemplate: /suppliers/{idSupplier}/supplier-locations
+          uriVariableMappings:
+              idSupplier: idSupplier
     properties:
         idSupplier:
             type: integer
