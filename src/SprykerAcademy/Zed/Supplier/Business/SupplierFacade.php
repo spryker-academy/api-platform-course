@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace SprykerAcademy\Zed\Supplier\Business;
 
+use Generated\Shared\Transfer\SupplierCollectionTransfer;
 use Generated\Shared\Transfer\SupplierCriteriaTransfer;
 use Generated\Shared\Transfer\SupplierLocationCollectionTransfer;
 use Generated\Shared\Transfer\SupplierLocationCriteriaTransfer;
@@ -124,5 +125,20 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
         return $this->getFactory()
             ->createSupplierReader()
             ->getSupplierLocationCollection($supplierLocationCriteriaTransfer);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
+     */
+    #[\Override]
+    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer
+    {
+        return $this->getFactory()
+            ->createSupplierReader()
+            ->getPaginatedSupplierCollection($supplierCriteriaTransfer);
     }
 }

@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace SprykerAcademy\Zed\Supplier\Business;
 
+use Generated\Shared\Transfer\SupplierCollectionTransfer;
 use Generated\Shared\Transfer\SupplierCriteriaTransfer;
 use Generated\Shared\Transfer\SupplierLocationCollectionTransfer;
 use Generated\Shared\Transfer\SupplierLocationCriteriaTransfer;
@@ -89,4 +90,16 @@ interface SupplierFacadeInterface
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
     ): SupplierLocationCollectionTransfer;
+
+    /**
+     * Specification:
+     * - Retrieves one page of suppliers, ordered by id.
+     * - Uses `SupplierCriteriaTransfer.pagination.offset` and `.limit`; without a pagination it returns all suppliers.
+     * - Sets `SupplierCollectionTransfer.pagination.nbResults` to the number of suppliers that match the criteria.
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
+     */
+    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer;
 }

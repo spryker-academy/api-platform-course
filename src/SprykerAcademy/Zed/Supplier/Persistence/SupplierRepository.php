@@ -9,6 +9,8 @@ declare(strict_types = 1);
 
 namespace SprykerAcademy\Zed\Supplier\Persistence;
 
+use Generated\Shared\Transfer\PaginationTransfer;
+use Generated\Shared\Transfer\SupplierCollectionTransfer;
 use Generated\Shared\Transfer\SupplierCriteriaTransfer;
 use Generated\Shared\Transfer\SupplierLocationCollectionTransfer;
 use Generated\Shared\Transfer\SupplierLocationCriteriaTransfer;
@@ -124,5 +126,44 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
         }
 
         return $supplierLocationCollectionTransfer;
+    }
+
+    /**
+     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
+     */
+    #[\Override]
+    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer
+    {
+        $supplierQuery = $this->getFactory()->createSupplierQuery();
+
+        if ($supplierCriteriaTransfer->getIdsSupplier()) {
+            $supplierQuery->filterByIdSupplier_In($supplierCriteriaTransfer->getIdsSupplier());
+        }
+
+        if ($supplierCriteriaTransfer->getName() !== null) {
+            $supplierQuery->filterByName($supplierCriteriaTransfer->getName());
+        }
+
+        $paginationTransfer = $supplierCriteriaTransfer->getPagination() ?? new PaginationTransfer();
+        $paginationTransfer->setNbResults($supplierQuery->count());
+
+        $supplierQuery->orderByIdSupplier();
+
+        if ($paginationTransfer->getLimit() !== null) {
+            $supplierQuery
+                ->offset($paginationTransfer->getOffset() ?? 0)
+                ->limit($paginationTransfer->getLimit());
+        }
+
+        $supplierCollectionTransfer = (new SupplierCollectionTransfer())->setPagination($paginationTransfer);
+        $supplierMapper = $this->getFactory()->createSupplierMapper();
+
+        foreach ($supplierQuery->find() as $supplierEntity) {
+            $supplierCollectionTransfer->addSupplier(
+                $supplierMapper->mapSupplierEntityToSupplierTransfer($supplierEntity, new SupplierTransfer()),
+            );
+        }
+
+        return $supplierCollectionTransfer;
     }
 }
