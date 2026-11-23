@@ -135,8 +135,9 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     #[\Override]
-    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer
-    {
+    public function getPaginatedSupplierCollection(
+        SupplierCriteriaTransfer $supplierCriteriaTransfer,
+    ): SupplierCollectionTransfer {
         return $this->getFactory()
             ->createSupplierReader()
             ->getPaginatedSupplierCollection($supplierCriteriaTransfer);
