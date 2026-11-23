@@ -3,6 +3,8 @@ resource:
     shortName: Supplier
     description: Supplier management API for back office integrations
     provider: SprykerAcademy\Glue\Supplier\Api\Backend\Provider\SuppliersBackendProvider
+    paginationEnabled: true
+    paginationItemsPerPage: 10
     operations:
         - type: Get
         - type: GetCollection
@@ -26,3 +28,8 @@ resource:
         phone:
             type: string
             description: Supplier phone
+        pagination:
+            type: object
+            objectName: Pagination
+            description: Paging data, set on the first item only
+            writable: false
