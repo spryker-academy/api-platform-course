@@ -101,5 +101,7 @@ interface SupplierFacadeInterface
      *
      * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
-    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer;
+    public function getPaginatedSupplierCollection(
+        SupplierCriteriaTransfer $supplierCriteriaTransfer,
+    ): SupplierCollectionTransfer;
 }

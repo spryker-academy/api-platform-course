@@ -132,8 +132,9 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
      * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     #[\Override]
-    public function getPaginatedSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): SupplierCollectionTransfer
-    {
+    public function getPaginatedSupplierCollection(
+        SupplierCriteriaTransfer $supplierCriteriaTransfer,
+    ): SupplierCollectionTransfer {
         $supplierQuery = $this->getFactory()->createSupplierQuery();
 
         if ($supplierCriteriaTransfer->getIdsSupplier()) {
