@@ -20,12 +20,19 @@ use Spryker\Zed\ZedNavigation\Business\Strategy\BreadcrumbNavigationMergeStrateg
  */
 class AcademyNavigationMergeStrategy extends BreadcrumbNavigationMergeStrategy
 {
-    public function mergeNavigation(Config $navigationDefinition, Config $rootDefinition, Config $coreNavigationDefinition): array
-    {
+    /**
+     * Spryker passes arrays since release 202610.0 and Config objects before it: the wider type fits both parents.
+     */
+    public function mergeNavigation(
+        array|Config $navigationDefinition,
+        array|Config $rootDefinition,
+        array|Config $coreNavigationDefinition,
+    ): array {
         $navigation = parent::mergeNavigation($navigationDefinition, $rootDefinition, $coreNavigationDefinition);
         $academyBundles = $this->getAcademyBundles();
+        $coreElements = is_array($coreNavigationDefinition) ? $coreNavigationDefinition : $coreNavigationDefinition->toArray();
 
-        foreach ($coreNavigationDefinition->toArray() as $name => $element) {
+        foreach ($coreElements as $name => $element) {
             if (isset($navigation[$name]) || !is_array($element)) {
                 continue;
             }
