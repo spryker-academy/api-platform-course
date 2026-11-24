@@ -17,27 +17,16 @@ use Generated\Shared\Transfer\SupplierTransfer;
 
 interface SupplierRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     */
     public function getSuppliers(SupplierCriteriaTransfer $supplierCriteriaTransfer): array;
 
-    /**
-     * @param int $idSupplier
-     */
     public function findSupplierById(int $idSupplier): ?SupplierTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
-     */
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
     ): SupplierLocationCollectionTransfer;
 
     /**
      * Returns one page of suppliers (criteria.pagination.offset/limit) and the total in pagination.nbResults.
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     public function getPaginatedSupplierCollection(
         SupplierCriteriaTransfer $supplierCriteriaTransfer,

@@ -25,9 +25,6 @@ use SprykerAcademy\Zed\Supplier\Persistence\Propel\Mapper\SupplierMapper;
  */
 class SupplierRepository extends AbstractRepository implements SupplierRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     */
     #[\Override]
     public function getSuppliers(SupplierCriteriaTransfer $supplierCriteriaTransfer): array
     {
@@ -50,7 +47,6 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
 
     /**
      * @param \Propel\Runtime\Collection\ObjectCollection<int, \Orm\Zed\Supplier\Persistence\PyzSupplier> $supplierEntities
-     * @param \SprykerAcademy\Zed\Supplier\Persistence\Propel\Mapper\SupplierMapper $supplierMapper
      *
      * @return list<\Generated\Shared\Transfer\SupplierTransfer>
      */
@@ -70,9 +66,6 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
         return $supplierTransfers;
     }
 
-    /**
-     * @param int $idSupplier
-     */
     #[\Override]
     public function findSupplierById(int $idSupplier): ?SupplierTransfer
     {
@@ -90,9 +83,6 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
             ->mapSupplierEntityToSupplierTransfer($supplierEntity, new SupplierTransfer());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
-     */
     #[\Override]
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
@@ -128,9 +118,6 @@ class SupplierRepository extends AbstractRepository implements SupplierRepositor
         return $supplierLocationCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     */
     #[\Override]
     public function getPaginatedSupplierCollection(
         SupplierCriteriaTransfer $supplierCriteriaTransfer,

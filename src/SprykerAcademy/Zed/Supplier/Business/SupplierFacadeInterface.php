@@ -21,15 +21,11 @@ interface SupplierFacadeInterface
      * - Creates a new supplier into the database
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     public function createSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer;
 
     /**
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      *
      * @return array<\Generated\Shared\Transfer\SupplierTransfer>
      */
@@ -42,8 +38,6 @@ interface SupplierFacadeInterface
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     *
      * @return array<\Generated\Shared\Transfer\SupplierTransfer>
      */
     public function getSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): array;
@@ -53,8 +47,6 @@ interface SupplierFacadeInterface
      * - Returns null when a supplier is not found.
      *
      * @api
-     *
-     * @param int $idSupplier
      */
     public function findSupplierById(int $idSupplier): ?SupplierTransfer;
 
@@ -64,8 +56,6 @@ interface SupplierFacadeInterface
      * - Returns the updated supplier transfer.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     public function updateSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer;
 
@@ -73,8 +63,6 @@ interface SupplierFacadeInterface
      * - Deletes supplier by `SupplierTransfer.idSupplier`.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     public function deleteSupplier(SupplierTransfer $supplierTransfer): void;
 
@@ -84,8 +72,6 @@ interface SupplierFacadeInterface
      * - Filters by `SupplierLocationCriteriaTransfer.fkSupplier`, `.fksSupplier` and `.idSupplierLocation` when they are set.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
      */
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
@@ -98,8 +84,6 @@ interface SupplierFacadeInterface
      * - Sets `SupplierCollectionTransfer.pagination.nbResults` to the number of suppliers that match the criteria.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     public function getPaginatedSupplierCollection(
         SupplierCriteriaTransfer $supplierCriteriaTransfer,

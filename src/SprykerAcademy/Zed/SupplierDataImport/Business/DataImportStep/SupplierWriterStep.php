@@ -21,11 +21,6 @@ use SprykerAcademy\Zed\SupplierDataImport\Business\DataSet\SupplierDataSetInterf
 
 class SupplierWriterStep extends PublishAwareStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     #[Override]
     public function execute(DataSetInterface $dataSet): void
     {
@@ -54,12 +49,6 @@ class SupplierWriterStep extends PublishAwareStep implements DataImportStepInter
         $this->handleMerchantRelations($supplierEntity->getIdSupplier(), $merchantIds);
     }
 
-    /**
-     * @param int $idSupplier
-     * @param string $merchantIds
-     *
-     * @return void
-     */
     protected function handleMerchantRelations(int $idSupplier, string $merchantIds): void
     {
         $merchantIdList = array_filter(array_map('intval', array_map('trim', explode(',', $merchantIds))));
