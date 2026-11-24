@@ -14,10 +14,6 @@ use Orm\Zed\SupplierSearch\Persistence\PyzSupplierSearch;
 
 class SupplierSearchMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     * @param \Orm\Zed\SupplierSearch\Persistence\PyzSupplierSearch $supplierSearchEntity
-     */
     public function mapSupplierSearchTransferToSupplierSearchEntity(
         SupplierSearchTransfer $supplierSearchTransfer,
         PyzSupplierSearch $supplierSearchEntity,
@@ -25,10 +21,6 @@ class SupplierSearchMapper
         return $supplierSearchEntity->fromArray($supplierSearchTransfer->modifiedToArray());
     }
 
-    /**
-     * @param \Orm\Zed\SupplierSearch\Persistence\PyzSupplierSearch $supplierSearchEntity
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     */
     public function mapSupplierSearchEntityToSupplierSearchTransfer(
         PyzSupplierSearch $supplierSearchEntity,
         SupplierSearchTransfer $supplierSearchTransfer,
