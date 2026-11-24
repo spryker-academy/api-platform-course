@@ -16,10 +16,6 @@ use Orm\Zed\SupplierLocation\Persistence\PyzSupplierLocation;
 
 class SupplierMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     * @param \Orm\Zed\Supplier\Persistence\PyzSupplier $supplierEntity
-     */
     public function mapSupplierTransferToSupplierEntity(
         SupplierTransfer $supplierTransfer,
         PyzSupplier $supplierEntity,
@@ -27,10 +23,6 @@ class SupplierMapper
         return $supplierEntity->fromArray($supplierTransfer->modifiedToArray());
     }
 
-    /**
-     * @param \Orm\Zed\Supplier\Persistence\PyzSupplier $supplierEntity
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     public function mapSupplierEntityToSupplierTransfer(
         PyzSupplier $supplierEntity,
         SupplierTransfer $supplierTransfer,
@@ -38,10 +30,6 @@ class SupplierMapper
         return $supplierTransfer->fromArray($supplierEntity->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\SupplierLocation\Persistence\PyzSupplierLocation $supplierLocationEntity
-     * @param \Generated\Shared\Transfer\SupplierLocationTransfer $supplierLocationTransfer
-     */
     public function mapSupplierLocationEntityToSupplierLocationTransfer(
         PyzSupplierLocation $supplierLocationEntity,
         SupplierLocationTransfer $supplierLocationTransfer,

@@ -27,8 +27,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     #[\Override]
     public function createSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer
@@ -42,8 +40,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     #[\Override]
     public function getSuppliers(SupplierCriteriaTransfer $supplierCriteriaTransfer): array
@@ -57,8 +53,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     #[\Override]
     public function getSupplierCollection(SupplierCriteriaTransfer $supplierCriteriaTransfer): array
@@ -70,8 +64,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param int $idSupplier
      */
     #[\Override]
     public function findSupplierById(int $idSupplier): ?SupplierTransfer
@@ -85,8 +77,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     #[\Override]
     public function updateSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer
@@ -100,8 +90,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
      */
     #[\Override]
     public function deleteSupplier(SupplierTransfer $supplierTransfer): void
@@ -115,8 +103,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
      */
     #[\Override]
     public function getSupplierLocationCollection(
@@ -131,8 +117,6 @@ class SupplierFacade extends AbstractFacade implements SupplierFacadeInterface
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
      */
     #[\Override]
     public function getPaginatedSupplierCollection(

@@ -31,10 +31,6 @@ class SupplierGuiCommunicationFactory extends AbstractCommunicationFactory
         return new SupplierTable($this->getSupplierQuery());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer|null $supplierTransfer
-     * @param array $options
-     */
     public function createSupplierCreateForm(?SupplierTransfer $supplierTransfer = null, array $options = []): FormInterface
     {
         return $this->getFormFactory()->create(SupplierCreateForm::class, $supplierTransfer, $options);
