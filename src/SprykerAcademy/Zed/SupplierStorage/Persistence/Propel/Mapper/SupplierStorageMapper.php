@@ -14,12 +14,6 @@ use Orm\Zed\SupplierStorage\Persistence\PyzSupplierStorage;
 
 class SupplierStorageMapper
 {
-    /**
-     * @param \Orm\Zed\SupplierStorage\Persistence\PyzSupplierStorage $supplierStorageEntity
-     * @param \Generated\Shared\Transfer\SupplierStorageTransfer $supplierStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\SupplierStorageTransfer
-     */
     public function mapSupplierStorageEntityToSupplierStorageTransfer(
         PyzSupplierStorage $supplierStorageEntity,
         SupplierStorageTransfer $supplierStorageTransfer,
@@ -31,12 +25,6 @@ class SupplierStorageMapper
         return $supplierStorageTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierStorageTransfer $supplierStorageTransfer
-     * @param \Orm\Zed\SupplierStorage\Persistence\PyzSupplierStorage $supplierStorageEntity
-     *
-     * @return \Orm\Zed\SupplierStorage\Persistence\PyzSupplierStorage
-     */
     public function mapSupplierStorageTransferToSupplierStorageEntity(
         SupplierStorageTransfer $supplierStorageTransfer,
         PyzSupplierStorage $supplierStorageEntity,

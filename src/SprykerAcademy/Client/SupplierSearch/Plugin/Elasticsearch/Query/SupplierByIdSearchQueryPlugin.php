@@ -20,8 +20,6 @@ class SupplierByIdSearchQueryPlugin implements QueryInterface, SearchContextAwar
     protected int $idSupplier;
 
     /**
-     * @param int $idSupplier
-     *
      * @return static
      */
     public function setIdSupplier(int $idSupplier): static

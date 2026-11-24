@@ -19,17 +19,11 @@ use SprykerAcademy\Zed\SupplierSearch\Persistence\Propel\Mapper\SupplierSearchMa
  */
 class SupplierSearchPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SupplierSearch\Persistence\PyzSupplierSearchQuery
-     */
     public function createSupplierSearchQuery(): PyzSupplierSearchQuery
     {
         return PyzSupplierSearchQuery::create();
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\SupplierSearch\Persistence\Propel\Mapper\SupplierSearchMapper
-     */
     public function createSupplierSearchMapper(): SupplierSearchMapper
     {
         return new SupplierSearchMapper();

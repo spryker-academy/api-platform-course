@@ -15,8 +15,6 @@ use SprykerAcademy\Shared\SupplierStorage\SupplierStorageConfig;
 class QueueDependencyProvider extends PyzQueueDependencyProvider
 {
     /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
      * @return array<\Spryker\Zed\Queue\Dependency\Plugin\QueueMessageProcessorPluginInterface>
      */
     protected function getProcessorMessagePlugins(Container $container): array
