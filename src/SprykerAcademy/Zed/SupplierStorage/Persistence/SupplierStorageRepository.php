@@ -20,8 +20,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
 class SupplierStorageRepository extends AbstractRepository implements SupplierStorageRepositoryInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\SupplierStorageCriteriaTransfer $supplierStorageCriteriaTransfer
-     *
      * @return array<\Generated\Shared\Transfer\SupplierStorageTransfer>
      */
     public function getSupplierStorageCollection(

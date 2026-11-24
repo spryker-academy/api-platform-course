@@ -13,19 +13,10 @@ use Generated\Shared\Transfer\SupplierTransfer;
 
 interface SupplierEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     public function createSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     public function updateSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     public function deleteSupplier(SupplierTransfer $supplierTransfer): void;
 
     /**
