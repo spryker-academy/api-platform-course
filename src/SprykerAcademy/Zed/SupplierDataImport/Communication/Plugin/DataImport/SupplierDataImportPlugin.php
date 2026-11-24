@@ -25,8 +25,6 @@ class SupplierDataImportPlugin extends AbstractPlugin implements DataImportPlugi
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
      * @return \Generated\Shared\Transfer\DataImporterReportTransfer
      */
     #[Override]

@@ -22,8 +22,6 @@ class SupplierDataImportFacade extends AbstractFacade implements SupplierDataImp
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
      * @return \Generated\Shared\Transfer\DataImporterReportTransfer
      */
     #[Override]
@@ -39,8 +37,6 @@ class SupplierDataImportFacade extends AbstractFacade implements SupplierDataImp
      * {@inheritDoc}
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
      *
      * @return \Generated\Shared\Transfer\DataImporterReportTransfer
      */

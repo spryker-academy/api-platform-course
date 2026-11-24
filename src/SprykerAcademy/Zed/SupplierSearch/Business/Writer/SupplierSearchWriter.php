@@ -20,12 +20,6 @@ use SprykerAcademy\Zed\SupplierSearch\Persistence\SupplierSearchRepositoryInterf
 
 readonly class SupplierSearchWriter
 {
-    /**
-     * @param \Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \SprykerAcademy\Zed\Supplier\Business\SupplierFacadeInterface $supplierFacade
-     * @param \SprykerAcademy\Zed\SupplierSearch\Persistence\SupplierSearchRepositoryInterface $supplierSearchRepository
-     * @param \SprykerAcademy\Zed\SupplierSearch\Persistence\SupplierSearchEntityManagerInterface $supplierSearchEntityManager
-     */
     public function __construct(
         protected EventBehaviorFacadeInterface $eventBehaviorFacade,
         protected SupplierFacadeInterface $supplierFacade,

@@ -39,9 +39,6 @@ class CreateController extends AbstractController
 
     protected const int STATUS_INACTIVE = 0;
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     */
     public function indexAction(Request $request): RedirectResponse|array
     {
         $supplierCreateForm = $this->getFactory()->createSupplierCreateForm(
@@ -73,9 +70,6 @@ class CreateController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $supplierCreateForm
-     */
     protected function createSupplier(FormInterface $supplierCreateForm): RedirectResponse
     {
         /** @var \Generated\Shared\Transfer\SupplierTransfer|null $supplierTransfer */
@@ -102,9 +96,6 @@ class CreateController extends AbstractController
         return $this->redirectResponse($this->getSupplierOverviewUrl());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     protected function isDuplicateSupplierName(SupplierTransfer $supplierTransfer): bool
     {
         $supplierName = $supplierTransfer->getName();
