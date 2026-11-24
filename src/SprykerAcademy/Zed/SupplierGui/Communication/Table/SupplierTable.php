@@ -39,16 +39,10 @@ class SupplierTable extends AbstractTable
     // The Delete button opens the confirmation page; the supplier is deleted from there.
     protected const string URL_SUPPLIER_DELETE = '/supplier-gui/delete/confirm';
 
-    /**
-     * @param \Orm\Zed\Supplier\Persistence\PyzSupplierQuery $supplierQuery
-     */
     public function __construct(protected PyzSupplierQuery $supplierQuery)
     {
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     */
     #[\Override]
     protected function configure(TableConfiguration $config): TableConfiguration
     {
@@ -85,9 +79,6 @@ class SupplierTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     */
     #[\Override]
     protected function prepareData(TableConfiguration $config): array
     {
@@ -119,9 +110,6 @@ class SupplierTable extends AbstractTable
         return $returns;
     }
 
-    /**
-     * @param int $idSupplier
-     */
     protected function buildActionButtons(int $idSupplier): string
     {
         return implode(' ', [

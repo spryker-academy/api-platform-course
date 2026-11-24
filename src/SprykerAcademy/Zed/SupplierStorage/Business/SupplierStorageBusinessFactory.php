@@ -23,9 +23,6 @@ use SprykerAcademy\Zed\SupplierStorage\SupplierStorageDependencyProvider;
  */
 class SupplierStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \SprykerAcademy\Zed\SupplierStorage\Business\Writer\SupplierStorageWriter
-     */
     public function createSupplierStorageWriter(): SupplierStorageWriter
     {
         return new SupplierStorageWriter(
@@ -36,17 +33,11 @@ class SupplierStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): EventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(SupplierStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\Supplier\Business\SupplierFacadeInterface
-     */
     public function getSupplierFacade(): SupplierFacadeInterface
     {
         return $this->getProvidedDependency(SupplierStorageDependencyProvider::FACADE_SUPPLIER);

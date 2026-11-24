@@ -25,10 +25,6 @@ class SupplierLocationWriterStep extends PublishAwareStep implements DataImportS
      */
     protected static array $supplierCache = [];
 
-    /**
-     * @param \Orm\Zed\Supplier\Persistence\PyzSupplierQuery $supplierQuery
-     * @param \Orm\Zed\SupplierLocation\Persistence\PyzSupplierLocationQuery $supplierLocationQuery
-     */
     public function __construct(
         protected PyzSupplierQuery $supplierQuery,
         protected PyzSupplierLocationQuery $supplierLocationQuery
@@ -36,8 +32,6 @@ class SupplierLocationWriterStep extends PublishAwareStep implements DataImportS
     }
 
     /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
      * @return void
      */
     #[Override]
@@ -76,11 +70,7 @@ class SupplierLocationWriterStep extends PublishAwareStep implements DataImportS
     }
 
     /**
-     * @param string $supplierName
-     *
      * @throws \Spryker\Zed\DataImport\Business\Exception\EntityNotFoundException
-     *
-     * @return int
      */
     protected function getSupplierId(string $supplierName): int
     {

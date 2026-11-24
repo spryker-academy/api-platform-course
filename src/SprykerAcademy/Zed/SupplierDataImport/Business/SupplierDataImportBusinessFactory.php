@@ -18,11 +18,6 @@ use SprykerAcademy\Zed\SupplierDataImport\Business\DataImportStep\SupplierWriter
 
 class SupplierDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getSupplierDataImport(?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($dataImporterConfigurationTransfer);
@@ -36,11 +31,6 @@ class SupplierDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getSupplierLocationDataImport(?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($dataImporterConfigurationTransfer);
@@ -53,25 +43,16 @@ class SupplierDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\SupplierDataImport\Business\DataImportStep\DescriptionToLowercaseStep
-     */
     public function createDescriptionToLowercaseStep(): DescriptionToLowercaseStep
     {
         return new DescriptionToLowercaseStep();
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\SupplierDataImport\Business\DataImportStep\SupplierWriterStep
-     */
     public function createSupplierWriterStep(): SupplierWriterStep
     {
         return new SupplierWriterStep();
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\SupplierDataImport\Business\DataImportStep\SupplierLocationWriterStep
-     */
     public function createSupplierLocationWriterStep(): SupplierLocationWriterStep
     {
         return new SupplierLocationWriterStep(
@@ -80,17 +61,11 @@ class SupplierDataImportBusinessFactory extends DataImportBusinessFactory
         );
     }
 
-    /**
-     * @return \Orm\Zed\Supplier\Persistence\PyzSupplierQuery
-     */
     public function createSupplierQuery(): PyzSupplierQuery
     {
         return PyzSupplierQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\SupplierLocation\Persistence\PyzSupplierLocationQuery
-     */
     public function createSupplierLocationQuery(): PyzSupplierLocationQuery
     {
         return PyzSupplierLocationQuery::create();
