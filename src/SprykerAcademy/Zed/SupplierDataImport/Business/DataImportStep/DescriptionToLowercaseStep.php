@@ -14,11 +14,6 @@ use SprykerAcademy\Zed\SupplierDataImport\Business\DataSet\SupplierDataSetInterf
 
 readonly class DescriptionToLowercaseStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     #[Override]
     public function execute(DataSetInterface $dataSet): void
     {

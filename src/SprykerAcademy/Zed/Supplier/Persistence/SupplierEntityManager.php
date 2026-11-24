@@ -15,9 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
 
 class SupplierEntityManager extends AbstractEntityManager implements SupplierEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     #[\Override]
     public function createSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer
     {
@@ -31,9 +28,6 @@ class SupplierEntityManager extends AbstractEntityManager implements SupplierEnt
             ->mapSupplierEntityToSupplierTransfer($supplierEntity, new SupplierTransfer());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     #[\Override]
     public function updateSupplier(SupplierTransfer $supplierTransfer): SupplierTransfer
     {
@@ -62,9 +56,6 @@ class SupplierEntityManager extends AbstractEntityManager implements SupplierEnt
             ->mapSupplierEntityToSupplierTransfer($supplierEntity, new SupplierTransfer());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierTransfer $supplierTransfer
-     */
     #[\Override]
     public function deleteSupplier(SupplierTransfer $supplierTransfer): void
     {

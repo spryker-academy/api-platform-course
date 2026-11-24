@@ -22,9 +22,6 @@ use SprykerAcademy\Zed\SupplierSearch\SupplierSearchDependencyProvider;
  */
 class SupplierSearchBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \SprykerAcademy\Zed\SupplierSearch\Business\Writer\SupplierSearchWriter
-     */
     public function createSupplierSearchWriter(): SupplierSearchWriter
     {
         return new SupplierSearchWriter(
@@ -35,17 +32,11 @@ class SupplierSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): EventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(SupplierSearchDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\Supplier\Business\SupplierFacadeInterface
-     */
     public function getSupplierFacade(): SupplierFacadeInterface
     {
         return $this->getProvidedDependency(SupplierSearchDependencyProvider::FACADE_SUPPLIER);
