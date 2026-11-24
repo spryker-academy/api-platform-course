@@ -18,8 +18,6 @@ class SupplierSearchReader implements SupplierSearchReaderInterface
      * Spryker Factory Pattern: Instantiated by SupplierSearchFactory with dependencies.
      * Default values prevent Symfony autowiring errors (Reader shouldn't be a service).
      *
-     * @param \Spryker\Client\Search\SearchClientInterface|null $searchClient
-     * @param \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface|null $supplierSearchQueryPlugin
      * @param array<\Spryker\Client\SearchExtension\Dependency\Plugin\QueryExpanderPluginInterface> $queryExpanderPlugins
      * @param array<\Spryker\Client\SearchExtension\Dependency\Plugin\ResultFormatterPluginInterface> $resultFormatterPlugins
      */

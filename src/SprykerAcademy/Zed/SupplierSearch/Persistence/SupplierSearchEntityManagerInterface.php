@@ -13,14 +13,9 @@ use Generated\Shared\Transfer\SupplierSearchTransfer;
 
 interface SupplierSearchEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     */
     public function createSupplierSearch(SupplierSearchTransfer $supplierSearchTransfer): SupplierSearchTransfer;
 
     /**
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     *
      * @throws \SprykerAcademy\Zed\SupplierSearch\Persistence\Exception\SupplierSearchNotFoundException
      */
     public function updateSupplierSearch(SupplierSearchTransfer $supplierSearchTransfer): SupplierSearchTransfer;

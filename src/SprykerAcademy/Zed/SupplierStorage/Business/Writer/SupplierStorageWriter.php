@@ -28,12 +28,6 @@ class SupplierStorageWriter
 
     protected SupplierStorageEntityManagerInterface $supplierStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \SprykerAcademy\Zed\Supplier\Business\SupplierFacadeInterface $supplierFacade
-     * @param \SprykerAcademy\Zed\SupplierStorage\Persistence\SupplierStorageRepositoryInterface $supplierStorageRepository
-     * @param \SprykerAcademy\Zed\SupplierStorage\Persistence\SupplierStorageEntityManagerInterface $supplierStorageEntityManager
-     */
     public function __construct(
         EventBehaviorFacadeInterface $eventBehaviorFacade,
         SupplierFacadeInterface $supplierFacade,
