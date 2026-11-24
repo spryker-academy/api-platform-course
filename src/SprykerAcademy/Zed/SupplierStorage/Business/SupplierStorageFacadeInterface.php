@@ -19,8 +19,6 @@ interface SupplierStorageFacadeInterface
      * @api
      *
      * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
-     *
-     * @return void
      */
     public function writeCollectionBySupplierEvents(array $eventTransfers): void;
 

@@ -17,16 +17,10 @@ use SprykerAcademy\Zed\Supplier\Persistence\SupplierRepositoryInterface;
 
 readonly class SupplierReader
 {
-    /**
-     * @param \SprykerAcademy\Zed\Supplier\Persistence\SupplierRepositoryInterface $supplierRepository
-     */
     public function __construct(protected SupplierRepositoryInterface $supplierRepository)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     */
     public function getSuppliers(SupplierCriteriaTransfer $supplierCriteriaTransfer): array
     {
         $supplierTransfers = $this->supplierRepository
@@ -39,9 +33,6 @@ readonly class SupplierReader
         return $supplierTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
-     */
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
     ): SupplierLocationCollectionTransfer {
@@ -75,9 +66,6 @@ readonly class SupplierReader
         }
     }
 
-    /**
-     * @param int $idSupplier
-     */
     public function findSupplierById(int $idSupplier): ?SupplierTransfer
     {
         return $this->supplierRepository->findSupplierById($idSupplier);

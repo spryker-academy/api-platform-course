@@ -19,8 +19,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
 class SupplierSearchRepository extends AbstractRepository implements SupplierSearchRepositoryInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\SupplierSearchCriteriaTransfer $supplierSearchCriteriaTransfer
-     *
      * @return array<\Generated\Shared\Transfer\SupplierSearchTransfer>
      */
     public function getSupplierSearches(SupplierSearchCriteriaTransfer $supplierSearchCriteriaTransfer): array
