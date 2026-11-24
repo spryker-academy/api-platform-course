@@ -14,8 +14,6 @@ use Generated\Shared\Transfer\SupplierStorageCriteriaTransfer;
 interface SupplierStorageRepositoryInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\SupplierStorageCriteriaTransfer $supplierStorageCriteriaTransfer
-     *
      * @return array<\Generated\Shared\Transfer\SupplierStorageTransfer>
      */
     public function getSupplierStorageCollection(

@@ -19,11 +19,6 @@ use SprykerAcademy\Zed\SupplierStorage\Persistence\Exception\SupplierStorageNotF
  */
 class SupplierStorageEntityManager extends AbstractEntityManager implements SupplierStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierStorageTransfer $supplierStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\SupplierStorageTransfer
-     */
     public function createSupplierStorage(SupplierStorageTransfer $supplierStorageTransfer): SupplierStorageTransfer
     {
         $supplierStorageEntity = new PyzSupplierStorage();
@@ -46,11 +41,7 @@ class SupplierStorageEntityManager extends AbstractEntityManager implements Supp
     }
 
     /**
-     * @param \Generated\Shared\Transfer\SupplierStorageTransfer $supplierStorageTransfer
-     *
      * @throws \SprykerAcademy\Zed\SupplierStorage\Persistence\Exception\SupplierStorageNotFoundException
-     *
-     * @return \Generated\Shared\Transfer\SupplierStorageTransfer
      */
     public function updateSupplierStorage(SupplierStorageTransfer $supplierStorageTransfer): SupplierStorageTransfer
     {

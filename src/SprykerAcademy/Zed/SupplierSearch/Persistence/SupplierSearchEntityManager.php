@@ -19,9 +19,6 @@ use SprykerAcademy\Zed\SupplierSearch\Persistence\Exception\SupplierSearchNotFou
  */
 class SupplierSearchEntityManager extends AbstractEntityManager implements SupplierSearchEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     */
     public function createSupplierSearch(
         SupplierSearchTransfer $supplierSearchTransfer,
     ): SupplierSearchTransfer {
@@ -40,8 +37,6 @@ class SupplierSearchEntityManager extends AbstractEntityManager implements Suppl
     }
 
     /**
-     * @param \Generated\Shared\Transfer\SupplierSearchTransfer $supplierSearchTransfer
-     *
      * @throws \SprykerAcademy\Zed\SupplierSearch\Persistence\Exception\SupplierSearchNotFoundException
      */
     public function updateSupplierSearch(
