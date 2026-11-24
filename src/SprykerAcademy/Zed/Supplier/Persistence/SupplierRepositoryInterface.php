@@ -16,19 +16,10 @@ use Generated\Shared\Transfer\SupplierTransfer;
 
 interface SupplierRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SupplierCriteriaTransfer $supplierCriteriaTransfer
-     */
     public function getSuppliers(SupplierCriteriaTransfer $supplierCriteriaTransfer): array;
 
-    /**
-     * @param int $idSupplier
-     */
     public function findSupplierById(int $idSupplier): ?SupplierTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer
-     */
     public function getSupplierLocationCollection(
         SupplierLocationCriteriaTransfer $supplierLocationCriteriaTransfer,
     ): SupplierLocationCollectionTransfer;

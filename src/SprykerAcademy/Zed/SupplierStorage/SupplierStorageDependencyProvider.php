@@ -17,11 +17,6 @@ class SupplierStorageDependencyProvider extends AbstractBundleDependencyProvider
     public const string FACADE_EVENT_BEHAVIOR = 'FACADE_EVENT_BEHAVIOR';
     public const string FACADE_SUPPLIER = 'FACADE_SUPPLIER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -32,11 +27,6 @@ class SupplierStorageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addEventBehaviorFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT_BEHAVIOR, function (Container $container) {
@@ -46,11 +36,6 @@ class SupplierStorageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSupplierFacade(Container $container): Container
     {
         $container->set(static::FACADE_SUPPLIER, function (Container $container) {

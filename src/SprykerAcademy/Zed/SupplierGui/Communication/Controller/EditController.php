@@ -34,9 +34,6 @@ class EditController extends AbstractController
 
     protected const int STATUS_INACTIVE = 0;
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     */
     public function indexAction(Request $request): RedirectResponse|array
     {
         $idSupplier = $this->castId($request->query->get(static::REQUEST_PARAM_ID_SUPPLIER));
@@ -64,9 +61,6 @@ class EditController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $supplierCreateForm
-     */
     protected function updateSupplier(FormInterface $supplierCreateForm): RedirectResponse
     {
         /** @var \Generated\Shared\Transfer\SupplierTransfer|null $supplierTransfer */

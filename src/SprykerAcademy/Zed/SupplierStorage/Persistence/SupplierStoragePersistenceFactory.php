@@ -19,17 +19,11 @@ use SprykerAcademy\Zed\SupplierStorage\Persistence\Propel\Mapper\SupplierStorage
  */
 class SupplierStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SupplierStorage\Persistence\PyzSupplierStorageQuery
-     */
     public function createSupplierStorageQuery(): PyzSupplierStorageQuery
     {
         return PyzSupplierStorageQuery::create();
     }
 
-    /**
-     * @return \SprykerAcademy\Zed\SupplierStorage\Persistence\Propel\Mapper\SupplierStorageMapper
-     */
     public function createSupplierStorageMapper(): SupplierStorageMapper
     {
         return new SupplierStorageMapper();
