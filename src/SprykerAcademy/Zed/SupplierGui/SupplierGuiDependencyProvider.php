@@ -19,9 +19,6 @@ class SupplierGuiDependencyProvider extends AbstractBundleDependencyProvider
 
     public const string PROPEL_QUERY_SUPPLIER = 'PROPEL_QUERY_SUPPLIER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     #[\Override]
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
@@ -33,9 +30,6 @@ class SupplierGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     protected function addSupplierPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_SUPPLIER, $container->factory(fn () => PyzSupplierQuery::create()));
@@ -43,9 +37,6 @@ class SupplierGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     protected function addSupplierFacade(Container $container): Container
     {
         $container->set(

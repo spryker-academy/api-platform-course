@@ -18,9 +18,6 @@ class SupplierSearchDependencyProvider extends AbstractBundleDependencyProvider
 
     public const string FACADE_SUPPLIER = 'FACADE_SUPPLIER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -30,9 +27,6 @@ class SupplierSearchDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     protected function addEventBehaviorFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT_BEHAVIOR, static fn (Container $container) => $container->getLocator()->eventBehavior()->facade());
@@ -40,9 +34,6 @@ class SupplierSearchDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     */
     protected function addSupplierFacade(Container $container): Container
     {
         $container->set(static::FACADE_SUPPLIER, static fn (Container $container) => $container->getLocator()->supplier()->facade());

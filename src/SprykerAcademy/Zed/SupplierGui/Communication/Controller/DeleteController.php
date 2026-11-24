@@ -61,9 +61,6 @@ class DeleteController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     */
     public function indexAction(Request $request): RedirectResponse
     {
         // Deletes only what the confirmation page sent: a DELETE request with a valid CSRF token.
